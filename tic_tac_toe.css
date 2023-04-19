@@ -1,0 +1,52 @@
+body {
+    background-color: #a3a3c2;
+}
+.two{
+ display: none;
+}
+.three{
+    display: flex;
+}
+.players{
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+}
+.one {
+    color: white;
+    text-align: center;
+    margin-top: 25px;
+}
+.padding-right{
+    margin-right: 10px;
+}
+table {
+    margin: auto;
+    margin-top: 50px;
+    height: 250px;
+    width: 250px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+}
+td {
+    width: 65px;
+    height: 65px;
+    text-align: center;
+}
+
+td:hover{
+    background-color: rgb(194, 230, 230);
+    cursor: pointer;
+}
+.bottum {
+    border-bottom: 5px solid red;
+}
+
+.right {
+    border-right: 5px solid red;
+}
+.iswinner{
+    text-align: center;
+    font-size: 60px;
+    color: greenyellow;
+}

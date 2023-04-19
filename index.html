@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic_Tac_Toe</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="tic_tac_toe.css">
+
+</head>
+<body>
+    <div>
+     <div class="one"><u style="text-decoration-color:rgb(210, 192, 139)">Tic Tac Toe</u></div>   
+    </div>
+
+  <div class="players">
+    <input type="text" placeholder="X-here" id="player-1" value="">
+    <input type="text" placeholder="O-here" id="player-2" value=""><br> <br>
+    <button type="button" class="btn btn-light" onclick="MainUi()">Let's Go</button>
+  </div>
+  
+  
+  <div class="two">
+            <div class="player-score">
+                <button><span id="name1" class="padding-right">X : </span><span id="player1-score">-</span></button>
+                <button><span id="name2" class="padding-right">O : </span><span id="player2-score">-</span></button>
+            </div>
+      
+        <table cellpadding="0" cellspacing="0">
+            
+        <tr>
+            <td class="right bottum" id="0"></td>
+            <td class="right bottum" id="1"></td>
+            <td class="bottum" id="2"></td>
+        </tr>
+        <tr>
+            <td class="right bottum" id="3"></td>
+            <td class="right bottum" id="4"></td>
+            <td class="bottum" id="5"></td>
+        </tr>
+        <tr>
+            <td class="right" id="6"></td>
+            <td class="right" id="7"></td>
+            <td  id="8"></td>
+        </tr>
+    </table>
+ 
+    </div>
+    <div class="iswinner"></div>
+</body>
+<script src="tic_tac_toe.js"></script>
+</html>
