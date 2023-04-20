@@ -2,6 +2,10 @@ var flag = true;
 var state = [1,0,1,1,0,1,0,1,0];//[0,0,0,0,0,0,0]
 var player1 , player2;
 var winCount1 =0, winCount2 =0;
+var reset;
+var score1 = 1;
+var score2 = 1;
+
 
 
 var winnerDiv = document.querySelector('.iswinner');
@@ -23,6 +27,8 @@ document.querySelector('table').addEventListener('click', (e)=>{
 
     document.querySelector('#name1').innerText = player1 + " : ";
     document.querySelector('#name2').innerText = player2 + " : ";
+
+   
 }
 else {
     alert("Plesase Fill the above inputs!");
@@ -60,73 +66,106 @@ function checkWinner(type){
     if(state[0]==state[1] && state[0]==state[2]){
         if(type){
             winnerDiv.innerHTML = 'Winner X';
+            document.getElementById('player1-score').innerHTML = score1++;
+            
             setDisable();
         }
         else{
             winnerDiv.innerHTML = 'Winner O';
+            document.getElementById('player2-score').innerHTML = score2++;
+            
         }
     }
     else if(state[3]==state[4] && state[3]==state[5]){
         if(type){
             winnerDiv.innerHTML = 'Winner X';
+            document.getElementById('player1-score').innerHTML = score1++;
+
             setDisable();
         }
         else{
             winnerDiv.innerHTML = 'Winner O';
+            document.getElementById('player2-score').innerHTML = score2++;
+
+            
         }
     }
     else if(state[6]==state[7] && state[6]==state[8]){
         if(type){
             winnerDiv.innerHTML = 'Winner X';
+            document.getElementById('player1-score').innerHTML = score1++;
+
             setDisable();
         }
         else{
             winnerDiv.innerHTML = 'Winner O';
+            document.getElementById('player2-score').innerHTML = score2++;
+
         }
     }
     else if(state[0]==state[3] && state[0]==state[6]){
         if(type){
             winnerDiv.innerHTML = 'Winner X';
+            document.getElementById('player1-score').innerHTML = score1++;
+
             setDisable();
         }
         else{
             winnerDiv.innerHTML = 'Winner O';
+            document.getElementById('player2-score').innerHTML = score2++;
+
         }
     }
     else if(state[1]==state[4] && state[1]==state[7]){
         if(type){
             winnerDiv.innerHTML = 'Winner X';
+            document.getElementById('player1-score').innerHTML = score1++;
+        
             setDisable();
         }
         else{
             winnerDiv.innerHTML = 'Winner O';
+            document.getElementById('player2-score').innerHTML = score2++;
+
         }
     }
     else if(state[2]==state[5] && state[2]==state[8]){
         if(type){
             winnerDiv.innerHTML = 'Winner X';
+            document.getElementById('player1-score').innerHTML = score1++;
+
             setDisable();
         }
         else{
             winnerDiv.innerHTML = 'Winner O';
+            document.getElementById('player2-score').innerHTML = score2++;
+
         }
     }
     else if(state[0]==state[4] && state[0]==state[8]){
         if(type){
             winnerDiv.innerHTML = 'Winner X';
+            document.getElementById('player1-score').innerHTML = score1++;
+
             setDisable();
         }
         else{
             winnerDiv.innerHTML = 'Winner O';
+            document.getElementById('player2-score').innerHTML = score2++;
+
         }
     }
     else if(state[2]==state[4] && state[2]==state[6]){
         if(type){
             winnerDiv.innerHTML = 'Winner X';
+            document.getElementById('player1-score').innerHTML = score1++;
+
             setDisable();
         }
         else{
             winnerDiv.innerHTML = 'Winner O';
+            document.getElementById('player2-score').innerHTML = score2++;
+
         }
     }
     else{
@@ -151,4 +190,29 @@ function setDisable(){
     }
    }
 }
+function Reset(){
+  
 
+        // const choice = confirm("are sure you want to reset");
+        if (true) {
+            flag = true;
+            state = [1, 0, 1, 1, 0, 1, 0, 1, 0];
+            let allIndex = document.querySelectorAll('td');
+            for (let i = 0; i < allIndex.length; i++) {
+                allIndex[i].innerHTML = "";
+                winnerDiv.innerHTML = "";
+    
+            }
+        }
+    }
+    function Restart(){
+
+    
+    // document.getElementById('clear')('click', e = () => {
+        const choice1= confirm('Are you sure ?');
+        if(choice1){
+            location.reload()
+     
+        }
+     }
+     
