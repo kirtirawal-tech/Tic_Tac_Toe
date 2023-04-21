@@ -63,126 +63,57 @@ function setValue(curDiv)
 }
 
 function checkWinner(type){
-    if(state[0]==state[1] && state[0]==state[2]){
-        if(type){
-            winnerDiv.innerHTML = 'Winner X';
-            document.getElementById('player1-score').innerHTML = score1++;
-            
-            setDisable();
-        }
-        else{
-            winnerDiv.innerHTML = 'Winner O';
-            document.getElementById('player2-score').innerHTML = score2++;
-            
-        }
-    }
-    else if(state[3]==state[4] && state[3]==state[5]){
-        if(type){
-            winnerDiv.innerHTML = 'Winner X';
-            document.getElementById('player1-score').innerHTML = score1++;
+    let winnerCon = [
 
-            setDisable();
-        }
-        else{
-            winnerDiv.innerHTML = 'Winner O';
-            document.getElementById('player2-score').innerHTML = score2++;
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
 
-            
-        }
-    }
-    else if(state[6]==state[7] && state[6]==state[8]){
-        if(type){
-            winnerDiv.innerHTML = 'Winner X';
-            document.getElementById('player1-score').innerHTML = score1++;
 
-            setDisable();
-        }
-        else{
-            winnerDiv.innerHTML = 'Winner O';
-            document.getElementById('player2-score').innerHTML = score2++;
+    ];
+    for (let i = 0; i < winnerCon.length; i++) {
+        let [a, b, c] = winnerCon[i];
 
-        }
-    }
-    else if(state[0]==state[3] && state[0]==state[6]){
-        if(type){
-            winnerDiv.innerHTML = 'Winner X';
-            document.getElementById('player1-score').innerHTML = score1++;
 
-            setDisable();
-        }
-        else{
-            winnerDiv.innerHTML = 'Winner O';
-            document.getElementById('player2-score').innerHTML = score2++;
+        if (state[a] == state[b] && state[a] == state[c]) {
 
-        }
-    }
-    else if(state[1]==state[4] && state[1]==state[7]){
-        if(type){
-            winnerDiv.innerHTML = 'Winner X';
-            document.getElementById('player1-score').innerHTML = score1++;
-        
-            setDisable();
-        }
-        else{
-            winnerDiv.innerHTML = 'Winner O';
-            document.getElementById('player2-score').innerHTML = score2++;
+            if (type) {
+                winnerDiv.innerHTML ='<h3>Winner X</h3>';
+                document.getElementById('player1-score').innerHTML = score1++;
+                setDisable();
+                break;
+            }
+            else {
+                winnerDiv.innerHTML = '<h3>Winner O</h3>';
+                document.getElementById('player2-score').innerHTML = score2++;
+                setDisable();
+                break;
 
-        }
-    }
-    else if(state[2]==state[5] && state[2]==state[8]){
-        if(type){
-            winnerDiv.innerHTML = 'Winner X';
-            document.getElementById('player1-score').innerHTML = score1++;
-
-            setDisable();
-        }
-        else{
-            winnerDiv.innerHTML = 'Winner O';
-            document.getElementById('player2-score').innerHTML = score2++;
-
-        }
-    }
-    else if(state[0]==state[4] && state[0]==state[8]){
-        if(type){
-            winnerDiv.innerHTML = 'Winner X';
-            document.getElementById('player1-score').innerHTML = score1++;
-
-            setDisable();
-        }
-        else{
-            winnerDiv.innerHTML = 'Winner O';
-            document.getElementById('player2-score').innerHTML = score2++;
-
-        }
-    }
-    else if(state[2]==state[4] && state[2]==state[6]){
-        if(type){
-            winnerDiv.innerHTML = 'Winner X';
-            document.getElementById('player1-score').innerHTML = score1++;
-
-            setDisable();
-        }
-        else{
-            winnerDiv.innerHTML = 'Winner O';
-            document.getElementById('player2-score').innerHTML = score2++;
-
-        }
-    }
-    else{
-        // alert("Draw");
-        let temp=0;
-        for(let i=0; i<state.length; i++){
-            if(state[i]==1 || state[i]==0){
-                temp+=1;//temp=temp+1
             }
         }
-        if(temp==0){
-            winnerDiv.innerHTML = 'Draw';
-            setDisable();
-        }
-        }
+
     }
 
+    
+        let temp = 0;
+        for (let i = 0; i < state.length; i++) {
+            if (state[i] == 1 || state[i] == 0 || state[i] == null) {
+    
+                temp += 1;
+            }
+        }
+        // console.log(temp);
+        if (temp == 0) {
+            // alert('Draw');
+            winnerDiv.innerHTML = '<h3>Try Again!</h3>' + '<h2>Draw</h2>'
+        }
+    }
+    
 function setDisable(){
     for(let i=0; i<state.length; i++){
         if(state[i]==1 || state[i]==0){
@@ -205,6 +136,7 @@ function Reset(){
             }
         }
     }
+
     function Restart(){
 
     
@@ -214,5 +146,4 @@ function Reset(){
             location.reload()
      
         }
-     }
-     
+    }
