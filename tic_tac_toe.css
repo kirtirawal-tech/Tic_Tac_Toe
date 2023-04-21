@@ -12,6 +12,10 @@ body {
     text-align: center;
     display: block;
 }
+.player-score{
+    text-align: center;
+    margin-top: 20px;
+}
 .one {
     color: white;
     text-align: center;
@@ -22,7 +26,7 @@ body {
 }
 table {
     margin: auto;
-    margin-top: 50px;
+    margin-top: 40px;
     height: 250px;
     width: 250px;
     font-family: 'Roboto', sans-serif;
@@ -49,4 +53,8 @@ td:hover{
     text-align: center;
     font-size: 60px;
     color: greenyellow;
+}
+.btns{
+   text-align: center;
+   margin-top: 20px;
 }
